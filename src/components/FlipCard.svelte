@@ -2,12 +2,14 @@
   import '../css/cards.css';
 
   export let pokemon_id;
+  export let pokemon_url;
+
+  console.log(pokemon_id, pokemon_url);
 
   let viewCard = false;
 
   const flipCard = (e) => {
     const id = e.currentTarget.id;
-    console.log(id)
     const front =  document.querySelector(`#${id} .flipFront`)
     const back =  document.querySelector(`#${id} .flipBack`)
     front.style.transform = 'rotateY(-180deg)';
@@ -16,7 +18,6 @@
   };
   const endFlipCard = (e) => {
     const id = e.currentTarget.id;
-    console.log(id)
     const front =  document.querySelector(`#${id} .flipFront`)
     const back =  document.querySelector(`#${id} .flipBack`)
     if( viewCard ) {
@@ -31,11 +32,12 @@
   on:click={flipCard}
   on:pointerleave={endFlipCard}
   on:keydown={flipCard}
-  id='cardId{pokemon_id.id}'
+  id='cardId{pokemon_id}'
 >
   <div class="card flipFront"/>
   <div class="card flipBack blue-card">
-    <img src="/assets/images/{pokemon_id.img}.svg" class="imagen" alt="" />
+    <img src={pokemon_url} class="imagen" alt="" />
+    <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/5.svg" class="imagen" alt="" /> -->
   </div>
 </div>
 
@@ -51,7 +53,7 @@
 
   .card {
     backface-visibility: hidden;
-    height: 90%;
+    min-height: 80%;
     position: absolute;
     transform-origin: center;
     transition: 1s transform;
@@ -61,7 +63,7 @@
   }
   .flipFront {
     background-color: #555;
-    background-image: url('/assets/images/pokeball-gray.svg');
+    background-image: url(/assets/images/pokeball-gray.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
@@ -84,9 +86,15 @@
   }
 
   .imagen {
-    width: 80%;
+    max-width: 80%;
     object-fit: cover;
     object-position: center;
+
   }
 
+  @media screen and (min-width: 768px) {
+  .card {
+    min-height: 80%;
+    }
+  }
 </style>
