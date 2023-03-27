@@ -2,22 +2,20 @@
   // import Card from './Card.svelte';
     import FlipCard from './FlipCard.svelte';
 
-    const pika = ['pika1','pika2','pika3','pika4','pika5'];
+    // const pika = ['pika1','pika2','pika3','pika4','pika5'];
+    const pika = [1,2,3,4,5].sort( (a,b) => Math.random() - 0.5);
 
     const pokemon_id = () => {
-      const id = Math.floor(Math.random() * 5 );
+      const id = pika.shift();
       return {
-        id: id + 1,
-        img: pika[id]
+        id: id,
+        img: 'pika'+id
       }
     };
 </script>
 
 
-
-
 <div class="grid-cards">
-  <!-- TODO: Componer el document.selectquery porq solo selecciona la primera carta cuando das click a cualquiera -->
   <FlipCard pokemon_id = {pokemon_id()}/>
   <FlipCard pokemon_id = {pokemon_id()}/>
   <FlipCard pokemon_id = {pokemon_id()}/>
@@ -27,7 +25,8 @@
 
   .grid-cards {
     margin: 0 auto;
-    width: 70%;
+    /* width: 100%; PARA 5 CARTAS*/
+    width: 65%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* grid-gap: 20px; */

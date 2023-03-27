@@ -51,7 +51,7 @@
 
   .card {
     backface-visibility: hidden;
-    height: 100%;
+    height: 90%;
     position: absolute;
     transform-origin: center;
     transition: 1s transform;
