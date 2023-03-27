@@ -9,7 +9,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.596);
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 10px 40px 10px 0;
     gap: 40px;
   }
@@ -44,7 +44,7 @@
     background-size: cover;
   }
 
-  @media screen and (max-width: 449px) {
+  /* @media screen and (max-width: 449px) {
     .header {
       padding-top: 5px;
     }
@@ -63,5 +63,5 @@
       padding-left: 15px;
       width: 120px;
     }
-  }
+  } */
 </style>

@@ -4,7 +4,8 @@
   // export let carta;
   let viewCard = false;
 
-  const flipCard = () => {
+  const flipCard = (e) => {
+    console.log(e.target)
     const front = document.querySelector('.flipFront');
     const back = document.querySelector('.flipBack');
     front.style.transform = 'rotateY(-180deg)';
@@ -78,7 +79,7 @@
   }
 
   .imagen {
-    width: 90%;
+    width: 80%;
     object-fit: cover;
     object-position: center;
   }

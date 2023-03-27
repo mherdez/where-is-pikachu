@@ -13,7 +13,7 @@
 <style>
 
   .grid-cards {
-    margin: -20px auto;
+    margin: 0 auto;
     max-width: 900px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
