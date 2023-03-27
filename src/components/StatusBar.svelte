@@ -26,6 +26,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 95%;
+    margin: 0 auto;
   }
   .material-icons {
     font-size: 3rem;
@@ -37,19 +39,20 @@
     color: red;
   }
   .collection {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
   }
   .pika-collection {
-    width: 90px;
-    height: 90px;
-    filter: grayscale(100%);
-    margin-right: 20px;
     border: 3px solid rgb(255, 221, 0);
-    padding: 7px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.566);
     cursor: pointer;
+    filter: grayscale(100%);
+    height: 80px;
+    margin-right: 25px;
+    padding: 8px;
+    width: 80px;
+    background-color: rgb(0, 174, 255);
   }
   .pika-ok {
     filter: grayscale(0);

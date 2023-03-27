@@ -30,7 +30,7 @@
   <div class="card flipFront" />
   <!-- <div class="card flipBack blue-card "> -->
   <div class="card flipBack blue-card">
-    <img src="/assets/images/pika3.svg" class="imagen" alt="" />
+    <img src="/assets/images/pika1.svg" class="imagen" alt="" />
   </div>
 </div>
 
@@ -78,7 +78,7 @@
   }
 
   .imagen {
-    width: 85%;
+    width: 90%;
     object-fit: cover;
     object-position: center;
   }
