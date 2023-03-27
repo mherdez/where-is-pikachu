@@ -1,20 +1,24 @@
 <script>
   import '../css/cards.css';
 
-  // export let carta;
+  export let pokemon_id;
+
   let viewCard = false;
 
   const flipCard = (e) => {
-    console.log(e.target)
-    const front = document.querySelector('.flipFront');
-    const back = document.querySelector('.flipBack');
+    const id = e.currentTarget.id;
+    console.log(id)
+    const front =  document.querySelector(`#${id} .flipFront`)
+    const back =  document.querySelector(`#${id} .flipBack`)
     front.style.transform = 'rotateY(-180deg)';
     back.style.transform = 'rotateY(0deg)';
     viewCard = true;
   };
-  const endFlipCard = () => {
-    const front = document.querySelector('.flipFront');
-    const back = document.querySelector('.flipBack');
+  const endFlipCard = (e) => {
+    const id = e.currentTarget.id;
+    console.log(id)
+    const front =  document.querySelector(`#${id} .flipFront`)
+    const back =  document.querySelector(`#${id} .flipBack`)
     if( viewCard ) {
       front.style.transform = 'rotateY(0deg)';
       back.style.transform = 'rotateY(180deg)';
@@ -27,11 +31,11 @@
   on:click={flipCard}
   on:pointerleave={endFlipCard}
   on:keydown={flipCard}
+  id='cardId{pokemon_id.id}'
 >
-  <div class="card flipFront" />
-  <!-- <div class="card flipBack blue-card "> -->
+  <div class="card flipFront"/>
   <div class="card flipBack blue-card">
-    <img src="/assets/images/pika1.svg" class="imagen" alt="" />
+    <img src="/assets/images/{pokemon_id.img}.svg" class="imagen" alt="" />
   </div>
 </div>
 
@@ -40,7 +44,7 @@
     align-items: center;
     cursor: pointer;
     display: flex;
-    height: 400px;
+    height: 450px;
     justify-content: center;
     position: relative;
   }
@@ -51,8 +55,9 @@
     position: absolute;
     transform-origin: center;
     transition: 1s transform;
-    width: 100%;
+    /* width: 70%; */
     border-radius: 10px;
+    aspect-ratio: 9/14;
   }
   .flipFront {
     background-color: #555;

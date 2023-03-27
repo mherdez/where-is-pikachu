@@ -18,6 +18,6 @@
 
 <style>
   header {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
   }
 </style>
