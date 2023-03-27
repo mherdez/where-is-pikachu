@@ -1,0 +1,81 @@
+
+.flipFront {
+  /* border-radius: 50%; */
+  background-color: #5e5e5e;
+    background-image: url(/assets/pokeball-gray.svg);
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+  /* height: 400px;
+  margin: 0;
+  padding: 0;
+  width: 270px; */
+
+  position: absolute;
+  transform-origin: left;
+  transition: 1s transform;
+  backface-visibility: hidden;
+
+  /* background-image: url('./assets/book1.png');
+  background-size: contain; */
+}
+.flipBack {
+  /* border-radius: 50%; */
+  background-color:  rgb(137, 205, 92);
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  width: 270px;
+
+  transition: 1s transform;
+
+  position: absolute;
+  transform-origin: right;
+  transform: rotateY(-180deg);
+  right: 100%;
+  backface-visibility: hidden;
+
+  background-image: url(/assets/pika.png);
+  background-size: contain;
+}
+
+.flipFront {
+  background-color:  red;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  width: 270px;
+
+  position: absolute;
+  transform-origin: center;
+  transition: 1s transform;
+  backface-visibility: hidden;
+
+  background-image: url('./assets/book1.png');
+  background-size: contain;
+}
+.flipBack {
+  /* border-radius: 50%; */
+  background-color:  indianred;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  width: 270px;
+
+  transition: 1s transform;
+
+  position: absolute;
+  transform-origin: center;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+
+  background-image: url('./assets/book3.png');
+  background-size: contain;
+}
+
+.wrap:hover .flipFront {
+  transform: rotateY(-180deg) ;
+}
+.wrap:hover .flipBack {
+  transform: rotateY(0deg);
+}

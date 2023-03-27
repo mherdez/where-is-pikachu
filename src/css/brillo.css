@@ -1,0 +1,39 @@
+
+.brillo{
+	position:relative;
+	margin: 0 auto;
+  display: block;
+	font-size:70px;
+	text-decoration:none;
+	color:#333;
+	overflow:hidden;
+	margin-bottom:50px;
+  cursor: pointer;
+}
+.brillo span{
+	position:absolute;
+	display: block;
+	background:url(https://lh3.googleusercontent.com/-vxQwquqFF0w/UXP-87VRPyI/AAAAAAAAFdM/g8PlNuj5oXg/s500/brillo.png) no-repeat;
+	background-position: -200px 0px;
+	top: 0;
+  left: -10%;
+	/* height: 200px;
+	width: 445px; */
+  width: 330px;
+  height: 93%;
+}
+.brillo:hover span{
+	background-position: 500px 0px;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 700ms;
+	transition-property: all;
+	transition-duration: 700ms;
+}
+
+/* .contenedor:hover .imagen {-webkit-transform:scale(1.3);transform:scale(1.3);}
+.contenedor {overflow:hidden;} */
+/* .imagen:hover {
+  -webkit-transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;} */
