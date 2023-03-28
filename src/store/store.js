@@ -1,52 +1,63 @@
 
-import { writable } from 'svelte/store'
+import { writable } from 'svelte/store';
 
-const pikachuStore = () => {
-  const { subscribe, set, update } = writable('')
+const iniPika = () => {
+  const { subscribe, set, update } = writable([]);
 
   return {
-      subscribe,
-      setPika: ( pikachu ) => {
-          set( pikachu )
-      },
+    subscribe,
+  };
+};
 
-  }
 
-}
+export const numPika = iniPika();
 
-export const pikachu = pikachuStore()
+const pikachuStore = () => {
+  const { subscribe, set, update } = writable([]);
+
+  return {
+    subscribe,
+    setPika: (pikachu) => {
+      update(n => [...n, pikachu]);
+    },
+
+  };
+
+};
+
+export const pikachu = pikachuStore();
 
 
 const heartStore = () => {
-  const { subscribe, set, update } = writable(3)
+  const { subscribe, set, update } = writable(3);
 
   return {
-      subscribe,
-      setHeart: ( heart ) => {
-          set( heart )
-      },
-      updateHeart: ( ) => {
-        update( n => n - 1 )
-      }
+    subscribe,
+    setHeart: (heart) => {
+      set(heart);
+    },
+    updateHeart: () => {
+      update(n => n - 1);
+    }
 
-  }
+  };
 
-}
+};
 
-export let hearts = heartStore()
+export let hearts = heartStore();
 
 
 const gameStore = () => {
-  const { subscribe, set, update } = writable(true)
+  const { subscribe, set, update } = writable(true);
 
   return {
-      subscribe,
-      setGame: ( game ) => {
-          set( game )
-      },
-  }
+    subscribe,
+    setGame: (game) => {
+      set(game);
+    },
+  };
 
-}
+};
 
 export let game = gameStore()
 

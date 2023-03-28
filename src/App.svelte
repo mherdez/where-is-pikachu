@@ -1,12 +1,10 @@
 <script>
-    import CardGrill from './components/CardGrill.svelte';
-    import Header from './components/Header.svelte';
-    import StatusBar from './components/StatusBar.svelte';
+  import CardGrill from './components/CardGrill.svelte';
+  import Header from './components/Header.svelte';
+  import StatusBar from './components/StatusBar.svelte';
 
-    import { game } from './store/store';
-
+  import { game, numPika } from './store/store';
 </script>
-
 
 <header>
   <Header />
@@ -14,14 +12,10 @@
 </header>
 
 <main>
-{#if $game}
-  <CardGrill />
-
-   {:else}
-   <p>Game not started</p>
-{/if}
+  {#if $game}
+    <CardGrill />
+  {/if}
 </main>
-
 
 <style>
   header {

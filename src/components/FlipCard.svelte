@@ -29,10 +29,10 @@
     if( viewCard ) {
       front.style.transform = 'rotateY(0deg)';
       back.style.transform = 'rotateY(180deg)';
+      game.setGame(false)
       setTimeout( () => {
         game.setGame(true)
-        console.log($game)
-      },500)
+      },200)
     }
   };
 </script>
