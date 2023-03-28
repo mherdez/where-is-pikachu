@@ -6,18 +6,6 @@ const init = () => {
   return [1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5);
 };
 
-
-// const iniPika = () => {
-//   const { subscribe, set, update } = writable(init());
-
-//   return {
-//     subscribe,
-//   };
-// };
-
-
-// export const numPika = iniPika();
-
 const pikachuStore = () => {
   const { subscribe, set, update } = writable(init());
 
@@ -75,4 +63,18 @@ const gameStore = () => {
 };
 
 export let game = gameStore()
+
+const gameLevel = () => {
+  const { subscribe, set, update } = writable(5);
+
+  return {
+    subscribe,
+    setLevel: (lvl) => {
+      set(lvl);
+    },
+  };
+
+};
+
+export let level = gameLevel()
 

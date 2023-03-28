@@ -2,7 +2,7 @@
   // import Card from './Card.svelte';
   import FlipCard from './FlipCard.svelte';
   // import {createPokemonSet} from '../helpers/createPokemonSet'
-  import { pikachu } from '../store/store';
+  import { pikachu, level } from '../store/store';
 
   const createPokemonSet = () => {
     const pokemones = new Set();
@@ -10,7 +10,7 @@
     //TODO: NIVEL
     // while (pokemones.size < 4) {
     // while (pokemones.size < 2) {
-    while (pokemones.size < 1) {
+    while (pokemones.size < $level - 1) {
       const p = Math.floor(Math.random() * 600 + 1);
       if (p != 25 && p != 26) {
         pokemones.add({
@@ -35,24 +35,26 @@
     //TODO: NIVEL
     // const order = [0, 1, 2, 3, 4].sort(() => Math.random() - 0.5);
     // const order = [0, 1, 2].sort(() => Math.random() - 0.5);
-    const order = [0, 1].sort(() => Math.random() - 0.5);
+    // const order = [0, 1].sort(() => Math.random() - 0.5);
+    const order = Array.from({length: $level}, (a,b) => b).sort(() => Math.random() - 0.5);
 
     const p = [...pokemones];
     //TODO: NIVEL
     // return [p[order[0]], p[order[1]], p[order[2]], p[order[3]], p[order[4]]];
     // return [p[order[0]], p[order[1]], p[order[2]]];
-    return [p[order[0]], p[order[1]]];
+    // return [p[order[0]], p[order[1]]];
+    return p.map((x,i) => p[order[i]]);
   };
 
   //TODO: NIVEL
   // const pokemones = [...createPokemonSet(5)].sort(() => Math.random() - 0.5);
   // const pokemones = [...createPokemonSet(3)].sort(() => Math.random() - 0.5);
-  const pokemones = [...createPokemonSet(2)].sort(() => Math.random() - 0.5);
+  const pokemones = [...createPokemonSet($level)].sort(() => Math.random() - 0.5);
 </script>
 
 <!-- <div class="grid-cards-5"> -->
 <!-- <div class="grid-cards-3"> -->
-<div class="grid-cards-2">
+<div class="grid-cards-{$level}">
   {#each pokemones as pokemon}
     <FlipCard pokemon_id={pokemon.id} pokemon_url={pokemon.url} />
   {/each}
