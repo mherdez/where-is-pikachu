@@ -9,16 +9,16 @@
 
   const flipCard = (e) => {
     const id = e.currentTarget.id;
-    if( id.includes('p') ) {
-      pikachu.setPika(`pika${id.slice(-1)}`)
-    }
     const front =  document.querySelector(`#${id} .flipFront`)
     const back =  document.querySelector(`#${id} .flipBack`)
     front.style.transform = 'rotateY(-180deg)';
     back.style.transform = 'rotateY(0deg)';
     setTimeout( () => {
+      if( id.includes('p') ) {
+        pikachu.setPika(`pika${id.slice(-1)}`)
+      }
       viewCard = true;
-    },300)
+    },500)
   };
   const endFlipCard = (e) => {
     const id = e.currentTarget.id;
