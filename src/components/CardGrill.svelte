@@ -2,8 +2,9 @@
   // import Card from './Card.svelte';
   import FlipCard from './FlipCard.svelte';
   import {createPokemonSet} from '../helpers/createPokemonSet'
+    import { game } from '../store/store';
 
-  const pokemones = [...createPokemonSet(3)].sort( () => Math.random() - 0.5);
+    const pokemones = [...createPokemonSet(3)].sort( () => Math.random() - 0.5);
 
 </script>
 

@@ -1,6 +1,6 @@
 <script>
   import '../css/cards.css';
-  import {pikachu} from '../store/store'
+  import { pikachu, hearts, game } from '../store/store'
 
   export let pokemon_id;
   export let pokemon_url;
@@ -16,6 +16,8 @@
     setTimeout( () => {
       if( id.includes('p') ) {
         pikachu.setPika(`pika${id.slice(-1)}`)
+      } else {
+        hearts.updateHeart()
       }
       viewCard = true;
     },500)
@@ -27,6 +29,10 @@
     if( viewCard ) {
       front.style.transform = 'rotateY(0deg)';
       back.style.transform = 'rotateY(180deg)';
+      setTimeout( () => {
+        game.setGame(true)
+        console.log($game)
+      },500)
     }
   };
 </script>

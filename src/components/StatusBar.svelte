@@ -1,6 +1,6 @@
 <script>
 
-import { pikachu } from '../store/store'
+import { pikachu, hearts } from '../store/store'
 
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -8,9 +8,9 @@ import { pikachu } from '../store/store'
 
 <div class="container">
   <div class="lives">
-    <i class="material-icons live">favorite</i>
-    <i class="material-icons live">favorite</i>
-    <i class="material-icons">favorite</i>
+    <i class="material-icons {$hearts >= 1 ? 'live' : ''} ">favorite</i>
+    <i class="material-icons {$hearts >= 2 ? 'live' : ''}">favorite</i>
+    <i class="material-icons {$hearts >= 3 ? 'live' : ''}">favorite</i>
     <!-- <i class="material-icons">favorite_border</i> -->
   </div>
 
@@ -33,7 +33,7 @@ import { pikachu } from '../store/store'
     margin: 0 auto;
   }
   .material-icons {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: rgba(119, 119, 119, 0.688);
     -webkit-text-stroke: 3px rgb(94, 94, 94);
   }
@@ -51,10 +51,10 @@ import { pikachu } from '../store/store'
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.566);
     cursor: pointer;
     filter: grayscale(100%);
-    height: 50px;
+    height: 4rem;
+    aspect-ratio: 1/1;
     margin-right: 25px;
     padding: 5px;
-    width: 50px;
     background-color: rgb(0, 174, 255);
   }
   .pika-ok {

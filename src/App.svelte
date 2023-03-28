@@ -3,13 +3,7 @@
     import Header from './components/Header.svelte';
     import StatusBar from './components/StatusBar.svelte';
 
-    import { createPokemonSet } from './helpers/createPokemonSet'
-    import {pikachu} from './store/store'
-
-
-
-   createPokemonSet(2)
-  //  {pikachu.setPika('pika1')}
+    import { game } from './store/store';
 
 </script>
 
@@ -20,7 +14,12 @@
 </header>
 
 <main>
+{#if $game}
   <CardGrill />
+
+   {:else}
+   <p>Game not started</p>
+{/if}
 </main>
 
 
