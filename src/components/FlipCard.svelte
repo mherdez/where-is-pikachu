@@ -1,5 +1,6 @@
 <script>
   import '../css/cards.css';
+  import {pikachu} from '../store/store'
 
   export let pokemon_id;
   export let pokemon_url;
@@ -8,6 +9,9 @@
 
   const flipCard = (e) => {
     const id = e.currentTarget.id;
+    if( id.includes('p') ) {
+      pikachu.setPika(`pika${id.slice(-1)}`)
+    }
     const front =  document.querySelector(`#${id} .flipFront`)
     const back =  document.querySelector(`#${id} .flipBack`)
     front.style.transform = 'rotateY(-180deg)';

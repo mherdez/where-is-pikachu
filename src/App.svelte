@@ -4,8 +4,12 @@
     import StatusBar from './components/StatusBar.svelte';
 
     import { createPokemonSet } from './helpers/createPokemonSet'
+    import {pikachu} from './store/store'
+
+
 
    createPokemonSet(2)
+  //  {pikachu.setPika('pika1')}
 
 </script>
 
