@@ -12,11 +12,11 @@
   </div>
 
   <div class="collection">
-    <img class="pika-collection pika-ok" src="assets/images/pika1.svg" alt="">
-    <img class="pika-collection" src="assets/images/pika2.svg" alt="">
-    <img class="pika-collection" src="assets/images/pika3.svg" alt="">
-    <img class="pika-collection" src="assets/images/pika4.svg" alt="">
-    <img class="pika-collection" src="assets/images/pika5.svg" alt="">
+    <img id="pika1" class="pika-collection" src="assets/images/pika1.svg" alt="">
+    <img id="pika2" class="pika-collection" src="assets/images/pika2.svg" alt="">
+    <img id="pika3" class="pika-collection" src="assets/images/pika3.svg" alt="">
+    <img id="pika4" class="pika-collection" src="assets/images/pika4.svg" alt="">
+    <img id="pika5" class="pika-collection" src="assets/images/pika5.svg" alt="">
   </div>
 </div>
 

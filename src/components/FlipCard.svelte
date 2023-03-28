@@ -4,8 +4,6 @@
   export let pokemon_id;
   export let pokemon_url;
 
-  console.log(pokemon_id, pokemon_url);
-
   let viewCard = false;
 
   const flipCard = (e) => {
@@ -14,7 +12,9 @@
     const back =  document.querySelector(`#${id} .flipBack`)
     front.style.transform = 'rotateY(-180deg)';
     back.style.transform = 'rotateY(0deg)';
-    viewCard = true;
+    setTimeout( () => {
+      viewCard = true;
+    },300)
   };
   const endFlipCard = (e) => {
     const id = e.currentTarget.id;
@@ -35,9 +35,8 @@
   id='cardId{pokemon_id}'
 >
   <div class="card flipFront"/>
-  <div class="card flipBack blue-card">
+  <div class="card flipBack { pokemon_id.toString().includes('p') ? 'blue-card' : 'gray-card' }">
     <img src={pokemon_url} class="imagen" alt="" />
-    <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/5.svg" class="imagen" alt="" /> -->
   </div>
 </div>
 
@@ -46,20 +45,22 @@
     align-items: center;
     cursor: pointer;
     display: flex;
-    height: 450px;
     justify-content: center;
     position: relative;
   }
 
   .card {
+    aspect-ratio: 3/5;
     backface-visibility: hidden;
-    min-height: 80%;
     position: absolute;
     transform-origin: center;
     transition: 1s transform;
-    /* width: 70%; */
     border-radius: 10px;
-    aspect-ratio: 9/14;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
   }
   .flipFront {
     background-color: #555;
@@ -71,7 +72,7 @@
   }
   .flipBack {
     align-items: center;
-    border: 20px solid white;
+    border: 1rem solid white;
     display: flex;
     justify-content: center;
     transform: rotateY(-180deg);
@@ -86,7 +87,7 @@
   }
 
   .imagen {
-    max-width: 80%;
+    max-width: 90%;
     object-fit: cover;
     object-position: center;
 
@@ -94,7 +95,7 @@
 
   @media screen and (min-width: 768px) {
   .card {
-    min-height: 80%;
+    /* min-height: 80%; */
     }
   }
 </style>

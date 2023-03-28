@@ -21,5 +21,9 @@ export const createPokemonSet = () => {
     }
   }
   pokemones.add(pikachu());
-  return [...pokemones];
+
+  const order = [0,1,2].sort( () => Math.random() - 0.5)
+
+  const p = [...pokemones]
+  return [p[order[0]],p[order[1]],p[order[2]],];
 };
