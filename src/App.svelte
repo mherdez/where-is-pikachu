@@ -4,7 +4,9 @@
   import StatusBar from './components/StatusBar.svelte';
   import WinLost from './components/WinLost.svelte';
 
-  import { game } from './store/store';
+  import { game, level } from './store/store';
+
+  level.setLevel(3);
 </script>
 
 <header>

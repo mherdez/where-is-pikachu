@@ -65,7 +65,7 @@ const gameStore = () => {
 export let game = gameStore()
 
 const gameLevel = () => {
-  const { subscribe, set, update } = writable(5);
+  const { subscribe, set, update } = writable(3);
 
   return {
     subscribe,
