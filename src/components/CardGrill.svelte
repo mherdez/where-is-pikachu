@@ -16,10 +16,11 @@
 <style>
   .grid-cards {
     margin: 0 auto;
-    width: 90vw;
+    width: 70vw;
     display: grid;
-    grid-template-columns: repeat(3, minmax(30%, 1fr));
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-template-rows: 55vh;
     grid-gap: 5%;
-    padding: 10px;
+    padding: 0 3%;
   }
 </style>

@@ -9,7 +9,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.596);
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 10px 40px 10px 0;
     gap: 40px;
   }
@@ -19,7 +19,7 @@
     color: rgb(0, 71, 129);
     display: inline-block;
     font-family: 'Pokemon Solid', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 3px;
     margin-bottom: 10px;
     text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
@@ -28,13 +28,13 @@
     -webkit-text-stroke: 3px rgb(0, 71, 129);
     color: rgb(242, 198, 0);
     display: inline-block;
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 10px 10px 13px rgba(0, 0, 0, 0.6);
     transform: rotate(-3deg);
   }
   .logo-title {
     display: inline-block;
-    width: 150px;
+    width: 120px;
   }
 
   .background {

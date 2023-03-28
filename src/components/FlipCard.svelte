@@ -54,16 +54,13 @@
   }
 
   .card {
-    aspect-ratio: 3/5;
     backface-visibility: hidden;
     position: absolute;
     transform-origin: center;
     transition: 1s transform;
-    border-radius: 10px;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
 
   }
   .flipFront {

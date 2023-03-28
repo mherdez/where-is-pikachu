@@ -33,7 +33,7 @@ import { pikachu } from '../store/store'
     margin: 0 auto;
   }
   .material-icons {
-    font-size: 3rem;
+    font-size: 2rem;
     color: rgba(119, 119, 119, 0.688);
     -webkit-text-stroke: 3px rgb(94, 94, 94);
   }
@@ -51,10 +51,10 @@ import { pikachu } from '../store/store'
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.566);
     cursor: pointer;
     filter: grayscale(100%);
-    height: 80px;
+    height: 50px;
     margin-right: 25px;
-    padding: 8px;
-    width: 80px;
+    padding: 5px;
+    width: 50px;
     background-color: rgb(0, 174, 255);
   }
   .pika-ok {

@@ -26,6 +26,6 @@
 
 <style>
   header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 </style>
