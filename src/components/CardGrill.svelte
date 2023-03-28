@@ -2,20 +2,10 @@
   // import Card from './Card.svelte';
   import FlipCard from './FlipCard.svelte';
   // import {createPokemonSet} from '../helpers/createPokemonSet'
-  import {numPika} from '../store/store'
+  import { pikachu } from '../store/store';
 
   const createPokemonSet = () => {
-
-
-    // ------------------
-    console.log($numPika)
     const pokemones = new Set();
-
-    const pika = [1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5);
-
-
-
-    // ------------------
 
     while (pokemones.size < 2) {
       const p = Math.floor(Math.random() * 600 + 1);
@@ -27,19 +17,16 @@
       }
     }
 
-
-
-
     // ------------------
-    const pikachu = () => {
-      const id = pika.shift();
+    const pi = () => {
+      const id = $pikachu[0];
       return {
         id: `p${id}`,
         url: `/assets/images/pika${id}.svg`,
       };
     };
 
-    pokemones.add(pikachu());
+    pokemones.add(pi());
     // ------------------
 
     const order = [0, 1, 2].sort(() => Math.random() - 0.5);

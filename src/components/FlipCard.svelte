@@ -1,6 +1,6 @@
 <script>
   import '../css/cards.css';
-  import { pikachu, hearts, game } from '../store/store'
+  import { pikachu, hearts, game, collection } from '../store/store';
 
   export let pokemon_id;
   export let pokemon_url;
@@ -9,30 +9,41 @@
 
   const flipCard = (e) => {
     const id = e.currentTarget.id;
-    const front =  document.querySelector(`#${id} .flipFront`)
-    const back =  document.querySelector(`#${id} .flipBack`)
+    const front = document.querySelector(`#${id} .flipFront`);
+    const back = document.querySelector(`#${id} .flipBack`);
     front.style.transform = 'rotateY(-180deg)';
     back.style.transform = 'rotateY(0deg)';
-    setTimeout( () => {
-      if( id.includes('p') ) {
-        pikachu.setPika(`pika${id.slice(-1)}`)
+    setTimeout(() => {
+      if (id.includes('p')) {
+        collection.setPika(`pika${id.slice(-1)}`);
+        pikachu.setPika(id.slice(-1));
+        console.log($pikachu, $collection);
       } else {
-        hearts.updateHeart()
+        hearts.updateHeart();
       }
       viewCard = true;
-    },500)
+    }, 500);
   };
   const endFlipCard = (e) => {
     const id = e.currentTarget.id;
-    const front =  document.querySelector(`#${id} .flipFront`)
-    const back =  document.querySelector(`#${id} .flipBack`)
-    if( viewCard ) {
+    const front = document.querySelector(`#${id} .flipFront`);
+    const back = document.querySelector(`#${id} .flipBack`);
+    console.log($hearts)
+    if (viewCard) {
       front.style.transform = 'rotateY(0deg)';
       back.style.transform = 'rotateY(180deg)';
-      game.setGame(false)
-      setTimeout( () => {
-        game.setGame(true)
-      },200)
+      game.setGame(!$game);
+      if ($hearts <= 0) {
+        console.log('You lost');
+        return;
+      }
+      if ($collection.length == 5) {
+        console.log('You won');
+        return;
+      }
+      setTimeout(() => {
+        game.setGame(!$game);
+      }, 0);
     }
   };
 </script>
@@ -42,10 +53,14 @@
   on:click={flipCard}
   on:pointerleave={endFlipCard}
   on:keydown={flipCard}
-  id='cardId{pokemon_id}'
+  id="cardId{pokemon_id}"
 >
-  <div class="card flipFront"/>
-  <div class="card flipBack { pokemon_id.toString().includes('p') ? 'blue-card' : 'gray-card' }">
+  <div class="card flipFront" />
+  <div
+    class="card flipBack {pokemon_id.toString().includes('p')
+      ? 'blue-card'
+      : 'gray-card'}"
+  >
     <img src={pokemon_url} class="imagen" alt="" />
   </div>
 </div>
@@ -67,7 +82,6 @@
     border-radius: 15px;
     width: 100%;
     height: 100%;
-
   }
   .flipFront {
     background-color: #555;
@@ -84,7 +98,6 @@
     justify-content: center;
     transform: rotateY(-180deg);
     box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.6);
-
   }
 
   .wrap:hover .flipFront {
@@ -97,12 +110,11 @@
     max-width: 90%;
     object-fit: cover;
     object-position: center;
-
   }
 
   @media screen and (min-width: 768px) {
-  .card {
-    /* min-height: 80%; */
+    .card {
+      /* min-height: 80%; */
     }
   }
 </style>

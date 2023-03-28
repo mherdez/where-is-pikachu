@@ -1,6 +1,6 @@
 <script>
 
-import { pikachu, hearts } from '../store/store'
+import { collection, hearts } from '../store/store'
 
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,11 +15,11 @@ import { pikachu, hearts } from '../store/store'
   </div>
 
   <div class="collection">
-    <img id="pika1" class="pika-collection {$pikachu.includes('pika1') ? 'pika-ok' : ''}" src="assets/images/pika1.svg" alt="">
-    <img id="pika2" class="pika-collection {$pikachu.includes('pika2') ? 'pika-ok' : ''}" src="assets/images/pika2.svg" alt="">
-    <img id="pika3" class="pika-collection {$pikachu.includes('pika3') ? 'pika-ok' : ''}" src="assets/images/pika3.svg" alt="">
-    <img id="pika4" class="pika-collection {$pikachu.includes('pika4') ? 'pika-ok' : ''}" src="assets/images/pika4.svg" alt="">
-    <img id="pika5" class="pika-collection {$pikachu.includes('pika5') ? 'pika-ok' : ''}" src="assets/images/pika5.svg" alt="">
+    <img id="pika1" class="pika-collection {$collection.includes('pika1') ? 'pika-ok' : ''}" src="assets/images/pika1.svg" alt="">
+    <img id="pika2" class="pika-collection {$collection.includes('pika2') ? 'pika-ok' : ''}" src="assets/images/pika2.svg" alt="">
+    <img id="pika3" class="pika-collection {$collection.includes('pika3') ? 'pika-ok' : ''}" src="assets/images/pika3.svg" alt="">
+    <img id="pika4" class="pika-collection {$collection.includes('pika4') ? 'pika-ok' : ''}" src="assets/images/pika4.svg" alt="">
+    <img id="pika5" class="pika-collection {$collection.includes('pika5') ? 'pika-ok' : ''}" src="assets/images/pika5.svg" alt="">
   </div>
 </div>
 

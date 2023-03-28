@@ -2,8 +2,9 @@
   import CardGrill from './components/CardGrill.svelte';
   import Header from './components/Header.svelte';
   import StatusBar from './components/StatusBar.svelte';
+  import WinLost from './components/WinLost.svelte';
 
-  import { game, numPika } from './store/store';
+  import { game } from './store/store';
 </script>
 
 <header>
@@ -14,6 +15,8 @@
 <main>
   {#if $game}
     <CardGrill />
+  {:else}
+    <WinLost />
   {/if}
 </main>
 

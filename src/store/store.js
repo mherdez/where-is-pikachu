@@ -1,18 +1,36 @@
 
 import { writable } from 'svelte/store';
 
-const iniPika = () => {
-  const { subscribe, set, update } = writable([]);
 
-  return {
-    subscribe,
-  };
+const init = () => {
+  return [1, 2, 3, 4, 5].sort((a, b) => Math.random() - 0.5);
 };
 
 
-export const numPika = iniPika();
+// const iniPika = () => {
+//   const { subscribe, set, update } = writable(init());
+
+//   return {
+//     subscribe,
+//   };
+// };
+
+
+// export const numPika = iniPika();
 
 const pikachuStore = () => {
+  const { subscribe, set, update } = writable(init());
+
+  return {
+    subscribe,
+    setPika: (pikachu) => {
+      update(n => n.filter( a => a != pikachu));
+    },
+  };
+};
+export const pikachu = pikachuStore();
+
+const pikaCollection = () => {
   const { subscribe, set, update } = writable([]);
 
   return {
@@ -20,12 +38,9 @@ const pikachuStore = () => {
     setPika: (pikachu) => {
       update(n => [...n, pikachu]);
     },
-
   };
-
 };
-
-export const pikachu = pikachuStore();
+export const collection = pikaCollection();
 
 
 const heartStore = () => {
