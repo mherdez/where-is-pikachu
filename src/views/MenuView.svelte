@@ -24,16 +24,17 @@
 
 <style>
   .container {
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 6rem auto;
-    border: 5px solid rgb(248, 205, 16);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
+    margin: -10px auto;
+    border: 4px solid rgb(248, 205, 16);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
   }
   h1 {
     text-align: center;
@@ -41,11 +42,11 @@
     letter-spacing: 3px;
     text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
 
-    -webkit-text-stroke: 3px rgb(0, 71, 129);
+    -webkit-text-stroke: 2px rgb(0, 71, 129);
     color: rgb(242, 198, 0);
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-shadow: 10px 10px 13px rgba(0, 0, 0, 0.6);
-    margin: 20px;
+    margin: 15px;
   }
   .lvl {
     box-sizing: border-box;
@@ -53,7 +54,7 @@
     font-family: sans-serif;
     letter-spacing: 2px;
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 13px 90px;
     background-color: rgb(0, 187, 255);
     border: 3px solid rgb(0, 71, 129);

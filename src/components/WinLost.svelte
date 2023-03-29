@@ -23,7 +23,7 @@
   h1 {
     font-size: 8rem;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     color: rgb(255, 0, 0);
     text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.602);
     -webkit-text-stroke: 2px white;
@@ -37,7 +37,7 @@
   img {
     display: block;
     margin: 0 auto;
-    width: 300px;
+    width: 250px;
   }
   .container {
     width: 50%;
@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 4rem auto;
+    margin: 3rem auto;
     /* border: 5px solid rgb(248, 205, 16); */
     /* padding: 40px; */
     /* border-radius: 10px; */
