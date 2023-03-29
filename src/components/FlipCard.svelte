@@ -28,17 +28,17 @@
     const id = e.currentTarget.id;
     const front = document.querySelector(`#${id} .flipFront`);
     const back = document.querySelector(`#${id} .flipBack`);
-    console.log($hearts)
+    // console.log($hearts)
     if (viewCard) {
       front.style.transform = 'rotateY(0deg)';
       back.style.transform = 'rotateY(180deg)';
       game.setGame(!$game);
       if ($hearts <= 0) {
-        console.log('You lost');
+        // console.log('You lost');
         return;
       }
       if ($collection.length == 5) {
-        console.log('You won');
+        // console.log('You won');
         return;
       }
       setTimeout(() => {

@@ -63,6 +63,7 @@
     border: 3px solid rgb(0, 71, 129);
     color: rgb(0, 71, 129);
     border-radius: 5px;
+    text-align: center;
   }
   .lvl:hover {
     box-sizing: border-box;
