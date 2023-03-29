@@ -58,7 +58,7 @@
     font-family: sans-serif;
 
     font-size: 1.5rem;
-    padding: 15px 90px;
+    padding: 15px 10%;
     background-color: rgb(0, 187, 255);
     border: 3px solid rgb(0, 71, 129);
     color: rgb(0, 71, 129);
