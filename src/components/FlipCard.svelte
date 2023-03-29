@@ -15,9 +15,9 @@
     back.style.transform = 'rotateY(0deg)';
     setTimeout(() => {
       if (id.includes('p')) {
-        collection.setPika(`pika${id.slice(-1)}`);
+        collection.setCollection(`pika${id.slice(-1)}`);
         pikachu.setPika(id.slice(-1));
-        console.log($pikachu, $collection);
+        // console.log($pikachu, $collection);
       } else {
         hearts.updateHeart();
       }

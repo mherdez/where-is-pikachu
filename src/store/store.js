@@ -14,6 +14,9 @@ const pikachuStore = () => {
     setPika: (pikachu) => {
       update(n => n.filter( a => a != pikachu));
     },
+    resetPika: () => {
+      set(init());
+    }
   };
 };
 export const pikachu = pikachuStore();
@@ -23,9 +26,12 @@ const pikaCollection = () => {
 
   return {
     subscribe,
-    setPika: (pikachu) => {
+    setCollection: (pikachu) => {
       update(n => [...n, pikachu]);
     },
+    resetCollection: () =>{
+      set([])
+    }
   };
 };
 export const collection = pikaCollection();
@@ -75,6 +81,18 @@ const gameLevel = () => {
   };
 
 };
-
 export let level = gameLevel()
+
+const newGame = () => {
+  const { subscribe, set, update } = writable(true);
+
+  return {
+    subscribe,
+    setNewGame: (item) => {
+      set(item);
+    },
+  };
+
+};
+export let newgame = newGame()
 

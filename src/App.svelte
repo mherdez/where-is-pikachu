@@ -4,9 +4,10 @@
   import StatusBar from './components/StatusBar.svelte';
   import WinLost from './components/WinLost.svelte';
 
-  import { game, level } from './store/store';
+  import { game, level, newgame } from './store/store';
+    import MenuView from './views/MenuView.svelte';
 
-  level.setLevel(3);
+  level.setLevel(8);
 </script>
 
 <header>
@@ -15,10 +16,14 @@
 </header>
 
 <main>
-  {#if $game}
-    <CardGrill />
+  {#if $newgame}
+    <MenuView />
   {:else}
-    <WinLost />
+    {#if $game}
+      <CardGrill />
+    {:else}
+      <WinLost />
+    {/if}
   {/if}
 </main>
 

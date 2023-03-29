@@ -61,6 +61,15 @@
 </div>
 
 <style>
+  .grid-cards-8 {
+    margin: 0 auto;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-template-rows: 400px 400px;
+    grid-gap: 2%;
+    padding: 0 1%;
+  }
   .grid-cards-5 {
     margin: 0 auto;
     width: 90vw;
